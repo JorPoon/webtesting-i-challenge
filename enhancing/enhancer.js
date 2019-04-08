@@ -6,8 +6,18 @@ module.exports = {
 };
 
 function succeed(item) {
-
-  return { ...item };
+let newItem = {
+  ...item
+}
+if (item.enhancement < 20) {
+   newItem = {
+    ...item,
+    enhancement: +1
+  }
+} else {
+  console.log('Enhancement level is already level 20')
+}
+  return newItem  ;
 }
 
 function fail(item) {

@@ -15,8 +15,12 @@ const enhancer = require('./enhancer.js');
 const item = {
     name: 'Dragon Blade',
     durability: 50,
-    enhancement: 0
+    enhancement: 19
 }
 it('should restore durability to 100', () => {
     expect(enhancer.repair(item)).toEqual({...item, durability: 100})
+})
+
+it('should increase enhancement by 1 if less than 20', () => {
+    expect(enhancer.succeed(item)).toEqual({...item, enhancement: +1})
 })
