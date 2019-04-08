@@ -16,9 +16,17 @@ function fail(item) {
 
 //accepts an item object and restores durability to 100
 function repair(item) {
-  
+  //console.log(item);
+  let newItem = {
+    ...item,
+    durability: 100
+  }
+  // let {name, durability, enhancement} = item;
 
-  return { ...item };
+  // durability = 100;
+  
+  //console.log(item)
+  return newItem;
 }
 
 function get(item) {
