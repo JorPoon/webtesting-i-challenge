@@ -6,24 +6,20 @@ module.exports = {
 };
 
 function succeed(item) {
-let newItem = {
-  ...item
-}
+let newItem = {}
 if (item.enhancement < 20) {
    newItem = {
     ...item,
     enhancement: item.enhancement +1
   }
 } else {
-  console.log('Enhancement level is already level 20')
+  newItem = {...item}
 }
   return newItem  ;
 }
 
 function fail(item) {
-  let newItem = {
-    ...item
-  }
+  let newItem = {}
 
   if (item.enhancement < 15) {
     newItem = {
@@ -31,18 +27,18 @@ function fail(item) {
       durability: item.durability - 5
     }
  } else if (item.enhancement >= 15 ) {
-  newItem = {
+    newItem = {
     ...item,
-    durability: item.durability - 10
-  }
+      durability: item.durability - 10
+    }
  }
  
  if(item.enhancement > 16 ) {
-   newItem = {
+    newItem = {
      ...item,
      durability: item.durability - 10,
      enhancement: item.enhancement -1
-   }
+    }
  }
 
   return newItem;
